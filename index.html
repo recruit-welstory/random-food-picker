@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘 점심 뭐 먹지?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ff5627;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #fff;
+      color: #ff5627;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffe4dc;
+    }
+
+    #spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-top: 30px;
+      display: none;
+    }
+
+    #loading-text {
+      font-size: 1.2em;
+      color: white;
+      margin-top: 15px;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #menu-container {
+      margin-top: 30px;
+      display: none;
+    }
+
+    #menu-container img {
+      width: 90vw;
+      max-width: 300px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      margin-bottom: 15px;
+    }
+
+    #menu-name {
+      font-size: 3em; /* 제목만큼 키움 */
+      font-weight: bold;
+      color: white;
+    
+    }
+
+    .logo {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;
+        z-index: 999;
+        }
+  </style>
+</head>
+<body>
+  <div class="logo">삼성웰스토리</div>
+
+  <h1>오늘 뭐 먹지?</h1>
+  <button onclick="recommendMenu()">웰스토리가 정해드려요😘</button>
+
+  <div id="spinner"></div>
+  <div id="loading-text"></div>
+
+  <div id="menu-container">
+    <img id="menu-image" src="" alt="메뉴 이미지" />
+    <p id="menu-name"></p>
+  </div>
+
+  <script>
+    const menus = [
+            { name: "김치찌개", image: "images/김치찌개.jpg" },
+            { name: "된장찌개", image: "images/김치찌개.jpg" },
+            { name: "삼겹살", image: "images/김치찌개.jpg" },
+            { name: "치킨", image: "images/김치찌개.jpg" },
+            { name: "피자", image: "images/김치찌개.jpg" },
+            { name: "햄버거", image: "images/김치찌개.jpg" },
+            { name: "초밥", image: "images/김치찌개.jpg" },
+            { name: "라면", image: "images/김치찌개.jpg" },
+            { name: "비빔밥", image: "images/김치찌개.jpg" },
+            { name: "떡볶이", image: "images/김치찌개.jpg" },
+            { name: "우동", image: "images/김치찌개.jpg" },
+            { name: "파스타", image: "images/김치찌개.jpg" }    ];
+
+    const thinkingTexts = [
+      "메뉴를 고민 중입니다...",
+      "배고프신가요? 잠시만요...",
+      "맛있는 걸 고르는 중이에요...",
+      "오늘은 뭘 먹으면 좋을까...",
+      "주변 맛집 탐색 중..."
+    ];
+
+    function recommendMenu() {
+      document.getElementById("menu-container").style.display = "none";
+      document.getElementById("spinner").style.display = "block";
+
+      const randomText = thinkingTexts[Math.floor(Math.random() * thinkingTexts.length)];
+      document.getElementById("loading-text").innerText = randomText;
+      document.getElementById("loading-text").style.display = "block";
+
+      setTimeout(() => {
+        const random = menus[Math.floor(Math.random() * menus.length)];
+        document.getElementById("menu-image").src = random.image;
+        document.getElementById("menu-name").innerText = random.name;
+        document.getElementById("spinner").style.display = "none";
+        document.getElementById("loading-text").style.display = "none";
+        document.getElementById("menu-container").style.display = "block";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
