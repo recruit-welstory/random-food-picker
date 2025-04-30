@@ -79,20 +79,21 @@
     }
 
     #menu-name {
-      font-size: 3em;
+      font-size: 3em; /* 제목만큼 키움 */
       font-weight: bold;
       color: white;
+    
     }
 
     .logo {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      color: white;
-      font-size: 1.2em;
-      font-weight: bold;
-      z-index: 999;
-    }
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;
+        z-index: 999;
+        }
   </style>
 </head>
 <body>
@@ -109,72 +110,68 @@
     <p id="menu-name"></p>
   </div>
 
-  <p id="click-count" style="font-size: 16px; color: white; text-align: center; margin-top: 40px;">
-    🔥오늘 웰스토리 점메추 인기도🔥: 0
-  </p>
-
   <script>
     const menus = [
-      { name: "김치찌개", image: "images/김치찌개.png" },
-      { name: "치킨마요덮밥", image: "images/치킨마요덮밥.png" },
-      { name: "샐러드파스타", image: "images/샐러드파스타.png" },
-      { name: "샤부샤부", image: "images/샤부샤부.png" },
-      { name: "제육볶음", image: "images/제육볶음.png" },
-      { name: "오므라이스", image: "images/오므라이스.png" },
-      { name: "버섯리조또", image: "images/버섯리조또.png" },
-      { name: "카레라이스", image: "images/카레라이스.png" },
-      { name: "비빔밥", image: "images/비빔밥.png" },
-      { name: "햄버거세트", image: "images/햄버거세트.png" },
-      { name: "차돌된장찌개", image: "images/차돌된장찌개.png" },
-      { name: "명란파스타", image: "images/명란파스타.png" },
-      { name: "된장찌개", image: "images/된장찌개.png" },
-      { name: "치즈돈가스", image: "images/치즈돈가스.png" },
-      { name: "낙지볶음", image: "images/낙지볶음.png" },
-      { name: "쌀국수", image: "images/쌀국수.png" },
-      { name: "불고기", image: "images/불고기.png" },
-      { name: "크림파스타", image: "images/크림파스타.png" },
-      { name: "치킨커리", image: "images/치킨커리.png" },
-      { name: "양념치킨", image: "images/양념치킨.png" },
-      { name: "삼겹살", image: "images/삼겹살.png" },
-      { name: "토마토파스타", image: "images/토마토파스타.png" },
-      { name: "감자수제비", image: "images/감자수제비.png" },
-      { name: "돈코츠라멘", image: "images/돈코츠라멘.png" },
-      { name: "냉면", image: "images/냉면.png" },
-      { name: "피자", image: "images/피자.png" },
-      { name: "참치마요덮밥", image: "images/참치마요덮밥.png" },
-      { name: "닭칼국수", image: "images/닭칼국수.png" },
-      { name: "육개장", image: "images/육개장.png" },
-      { name: "타코", image: "images/타코.png" },
-      { name: "갈비탕", image: "images/갈비탕.png" },
-      { name: "도리아", image: "images/도리아.png" },
-      { name: "떡볶이", image: "images/떡볶이.png" },
-      { name: "클럽샌드위치", image: "images/클럽샌드위치.png" },
-      { name: "연어덮밥", image: "images/연어덮밥.png" },
-      { name: "스시", image: "images/스시.png" },
-      { name: "순두부찌개", image: "images/순두부찌개.png" },
-      { name: "감바스", image: "images/감바스.png" },
-      { name: "닭갈비", image: "images/닭갈비.png" },
-      { name: "고추장불고기", image: "images/고추장불고기.png" },
-      { name: "부대찌개", image: "images/부대찌개.png" },
-      { name: "타코라이스", image: "images/타코라이스.png" },
-      { name: "콩불", image: "images/콩불.png" },
-      { name: "우동", image: "images/우동.png" },
-      { name: "순대국", image: "images/순대국.png" },
-      { name: "치즈볼덮밥", image: "images/치즈볼덮밥.png" },
-      { name: "김치볶음밥", image: "images/김치볶음밥.png" },
-      { name: "새우튀김우동", image: "images/새우튀김우동.png" },
-      { name: "비빔국수", image: "images/비빔국수.png" },
-      { name: "팟타이", image: "images/팟타이.png" },
-      { name: "우삼겹덮밥", image: "images/우삼겹덮밥.png" },
-      { name: "마파두부", image: "images/마파두부.png" },
-      { name: "콩나물해장국", image: "images/콩나물해장국.png" },
-      { name: "파히타", image: "images/파히타.png" },
-      { name: "함박스테이크", image: "images/함박스테이크.png" },
-      { name: "냉우동", image: "images/냉우동.png" },
-      { name: "쭈꾸미볶음", image: "images/쭈꾸미볶음.png" },
-      { name: "해물파전", image: "images/해물파전.png" },
-      { name: "김밥천국김밥", image: "images/김밥천국김밥.png" },
-      { name: "멕시칸샐러드", image: "images/멕시칸샐러드.png" }
+            { name: "김치찌개", image: "images/김치찌개.png" },
+{ name: "치킨마요덮밥", image: "images/치킨마요덮밥.png" },
+{ name: "샐러드파스타", image: "images/샐러드파스타.png" },
+{ name: "샤부샤부", image: "images/샤부샤부.png" },
+{ name: "제육볶음", image: "images/제육볶음.png" },
+{ name: "오므라이스", image: "images/오므라이스.png" },
+{ name: "버섯리조또", image: "images/버섯리조또.png" },
+{ name: "카레라이스", image: "images/카레라이스.png" },
+{ name: "비빔밥", image: "images/비빔밥.png" },
+{ name: "햄버거세트", image: "images/햄버거세트.png" },
+{ name: "차돌된장찌개", image: "images/차돌된장찌개.png" },
+{ name: "명란파스타", image: "images/명란파스타.png" },
+{ name: "된장찌개", image: "images/된장찌개.png" },
+{ name: "치즈돈가스", image: "images/치즈돈가스.png" },
+{ name: "낙지볶음", image: "images/낙지볶음.png" },
+{ name: "쌀국수", image: "images/쌀국수.png" },
+{ name: "불고기", image: "images/불고기.png" },
+{ name: "크림파스타", image: "images/크림파스타.png" },
+{ name: "치킨커리", image: "images/치킨커리.png" },
+{ name: "양념치킨", image: "images/양념치킨.png" },
+{ name: "삼겹살", image: "images/삼겹살.png" },
+{ name: "토마토파스타", image: "images/토마토파스타.png" },
+{ name: "감자수제비", image: "images/감자수제비.png" },
+{ name: "돈코츠라멘", image: "images/돈코츠라멘.png" },
+{ name: "냉면", image: "images/냉면.png" },
+{ name: "피자", image: "images/피자.png" },
+{ name: "참치마요덮밥", image: "images/참치마요덮밥.png" },
+{ name: "닭칼국수", image: "images/닭칼국수.png" },
+{ name: "육개장", image: "images/육개장.png" },
+{ name: "타코", image: "images/타코.png" },
+{ name: "갈비탕", image: "images/갈비탕.png" },
+{ name: "도리아", image: "images/도리아.png" },
+{ name: "떡볶이", image: "images/떡볶이.png" },
+{ name: "클럽샌드위치", image: "images/클럽샌드위치.png" },
+{ name: "연어덮밥", image: "images/연어덮밥.png" },
+{ name: "스시", image: "images/스시.png" },
+{ name: "순두부찌개", image: "images/순두부찌개.png" },
+{ name: "감바스", image: "images/감바스.png" },
+{ name: "닭갈비", image: "images/닭갈비.png" },
+{ name: "고추장불고기", image: "images/고추장불고기.png" },
+{ name: "부대찌개", image: "images/부대찌개.png" },
+{ name: "타코라이스", image: "images/타코라이스.png" },
+{ name: "콩불", image: "images/콩불.png" },
+{ name: "우동", image: "images/우동.png" },
+{ name: "순대국", image: "images/순대국.png" },
+{ name: "치즈볼덮밥", image: "images/치즈볼덮밥.png" },
+{ name: "김치볶음밥", image: "images/김치볶음밥.png" },
+{ name: "새우튀김우동", image: "images/새우튀김우동.png" },
+{ name: "비빔국수", image: "images/비빔국수.png" },
+{ name: "팟타이", image: "images/팟타이.png" },
+{ name: "우삼겹덮밥", image: "images/우삼겹덮밥.png" },
+{ name: "마파두부", image: "images/마파두부.png" },
+{ name: "콩나물해장국", image: "images/콩나물해장국.png" },
+{ name: "파히타", image: "images/파히타.png" },
+{ name: "함박스테이크", image: "images/함박스테이크.png" },
+{ name: "냉우동", image: "images/냉우동.png" },
+{ name: "쭈꾸미볶음", image: "images/쭈꾸미볶음.png" },
+{ name: "해물파전", image: "images/해물파전.png" },
+{ name: "멕시칸샐러드", image: "images/멕시칸샐러드.png" }
+
     ];
 
     const thinkingTexts = [
@@ -184,8 +181,6 @@
       "오늘은 뭘 먹으면 좋을까...",
       "주변 맛집 탐색 중..."
     ];
-
-    let clickCount = 0;
 
     function recommendMenu() {
       document.getElementById("menu-container").style.display = "none";
@@ -202,11 +197,10 @@
         document.getElementById("spinner").style.display = "none";
         document.getElementById("loading-text").style.display = "none";
         document.getElementById("menu-container").style.display = "block";
-
-        clickCount++;
-        document.getElementById("click-count").innerText = `🔥오늘 웰스토리 점메추 인기도🔥: ${clickCount}`;
       }, 2000);
     }
   </script>
+
+  </p>
 </body>
 </html>
